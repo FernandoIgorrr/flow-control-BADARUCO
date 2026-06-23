@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+  xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.card.ProductionCardController"
+  maxWidth="Infinity"
+  prefHeight="150"
+  styleClass="client-card">
+  <!-- CONTENT -->
+  <VBox>
+    <padding>
+      <Insets top="0" right="22" bottom="22" left="22" />
+    </padding>
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="8">
+      <padding>
+        <Insets top="0" right="0" bottom="0" left="0" />
+      </padding>
+      <!-- ICON CONTAINER -->
+      <StackPane
+        fx:id="iconContainer"
+        prefWidth="22"
+        prefHeight="22"
+        styleClass="icon-container-on-card">
+        <ImageView fx:id="imgType"
+          fitHeight="22"
+          fitWidth="22"
+          preserveRatio="true" />
+      </StackPane>
+      <!--  DATA DA PRODUÇÃO -->
+      <Label fx:id="lblProductionDate"
+        styleClass="production-info-date, text-field-copy" />
+
+
+      <!-- SPACER -->
+      <Region HBox.hgrow="ALWAYS" />
+
+      <!--  TOP RIGHT HEADER CONTENT -->
+      <VBox
+        alignment="TOP_RIGHT">
+        <padding>
+          <Insets top="22" right="0" bottom="0" left="0" />
+        </padding>
+        <Label text="Custo total da produção" />
+        <Label fx:id="lblTotalExpense" styleClass="total-price-info-blue" />
+      </VBox>
+
+    </HBox>
+    <!-- CONTEÚDO -->
+    <HBox spacing="24">
+      <padding>
+        <Insets top="12" right="0" bottom="0" left="0" />
+      </padding>
+      <!--  INFO DA PARTE ESQUERDA -->
+      <VBox spacing="12" HBox.hgrow="ALWAYS">
+        <HBox spacing="12">
+          <StackPane fx:id="iconContainer"
+            prefWidth="18"
+            prefHeight="18"
+            styleClass="icon-container-on-card">
+            <ImageView fx:id="imgType2"
+              fitHeight="18"
+              fitWidth="18"
+              preserveRatio="true" />
+          </StackPane>
+          <Label text="Insumos utilizados" styleClass="label-grey-13-bold" />
+        </HBox>
+        <!-- CAIXAS VERDES AQUI DENTRO -->
+        <VBox fx:id="rawMaterialsPurchase" spacing="6">
+
+        </VBox>
+      </VBox>
+      <!--  INFO DA PARTE DIRETA -->
+      <VBox spacing="12" HBox.hgrow="ALWAYS">
+        <HBox spacing="12">
+          <StackPane fx:id="iconContainer"
+            prefWidth="18"
+            prefHeight="18"
+            styleClass="icon-container-on-card">
+            <ImageView fx:id="imgType3"
+              fitHeight="18"
+              fitWidth="18"
+              preserveRatio="true" />
+          </StackPane>
+          <Label text="Produto Produzido " styleClass="label-grey-13-bold" />
+
+        </HBox>
+        <!-- CAIXA VERDE AQUI DENTRO -->
+        <VBox spacing="12" styleClass="green-box">
+          <padding>
+            <Insets top="12" right="12" bottom="12" left="12" />
+          </padding>
+          <Label fx:id="lblProductNameDesc" />
+          <HBox>
+            <Label text="Preço atual: " styleClass="production-info"/>
+            <Label fx:id="lblProductPrice" />
+          </HBox>
+          <HBox>
+            <Label fx:id="lblGrossProductQuantity" />
+            <Label fx:id="lblProductQuantity" />
+          </HBox>
+          <Separator prefWidth="120" styleClass="green-separator" />
+          <HBox spacing="24">
+            <VBox HBox.hgrow="ALWAYS">
+              <Label text="Custo/Unid" styleClass="production-info" />
+              <Label fx:id="lblExpensePerUnit" />
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+              <Label text="Lucro/Unid" styleClass="production-info" />
+              <Label fx:id="lblNetIncomePerUnit" />
+            </VBox>
+            <VBox HBox.hgrow="ALWAYS">
+              <Label text="Receita Líq." styleClass="production-info" />
+              <Label fx:id="lblNetIncome" />
+            </VBox>
+          </HBox>
+
+        </VBox>
+
+        <HBox spacing="12" styleClass="green-box2">
+          <padding>
+            <Insets top="12" right="12" bottom="12" left="12" />
+          </padding>
+          <VBox HBox.hgrow="ALWAYS">
+            <Label text="Total Receita Bruta" styleClass="production-info-result" />
+            <Label fx:id="lblGrossIncome" />
+          </VBox>
+          <VBox HBox.hgrow="ALWAYS">
+            <Label text="Total Receita Líquida" styleClass="production-info-result" />
+            <Label fx:id="lblNetIncome2" />
+          </VBox>
+        </HBox>
+      </VBox>
+    </HBox>
+  </VBox>
+</StackPane>

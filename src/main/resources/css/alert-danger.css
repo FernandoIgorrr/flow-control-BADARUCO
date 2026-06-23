@@ -1,0 +1,54 @@
+.danger-alert .danger-text {
+    -fx-fill: #b91c1c;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.danger-alert .common-text {
+    -fx-fill: black;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.danger-alert .danger-name {
+    -fx-fill: #7f1d1d;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
+
+.danger-alert .header-panel {
+    -fx-background-color: #7f1d1d;
+}
+
+.danger-alert .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.danger-alert .content.label {
+    -fx-text-fill: #b91c1c;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.danger-alert .button {
+    -fx-background-color: white;
+    -fx-text-fill: #374151;
+    -fx-border-color: #d1d5db;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+
+.danger-alert .button:default {
+    -fx-background-color: #dc2626;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-border-color: #7e1717;
+    -fx-text-fill: white;
+}

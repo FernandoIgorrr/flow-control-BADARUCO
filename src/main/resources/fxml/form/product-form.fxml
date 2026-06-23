@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.form.ProductFormController"
+    stylesheets="@../../css/form.css"
+    styleClass="form-root">
+
+    <!-- HEADER -->
+    <top>
+        <HBox spacing="10"
+            alignment="CENTER_LEFT"
+            styleClass="form-header">
+
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16" />
+            </padding>
+            <VBox spacing="4">
+                <Label
+                    text="Novo Produto"
+                    styleClass="form-title" />
+            </VBox>
+        </HBox>
+    </top>
+
+    <!-- FORM -->
+    <center>
+        <VBox spacing="14">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50" />
+                    <ColumnConstraints percentWidth="50" />
+                </columnConstraints>
+
+                <children>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="0"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Nome do produto *" />
+                        <TextField fx:id="nameField" promptText="Nome" />
+                    </VBox>
+
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="1"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Descrição do produto *" />
+                        <TextField fx:id="descriptionField" promptText="Descrição" />
+                    </VBox>
+
+
+                    <VBox spacing="4" GridPane.rowIndex="2" GridPane.columnIndex="0">
+                        <Label text="Preço de Venda (R$) *" />
+                        <TextField
+                            fx:id="priceField"
+                            promptText="0,0" />
+                    </VBox>
+
+                    
+                    <VBox spacing="4" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                        <Label text="Categoria *" />
+                        <ComboBox fx:id="productCategoryComboBox"
+                            maxWidth="Infinity"
+                            promptText="Selecione a categoria..." />
+                    </VBox>
+
+                    <VBox spacing="4" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                        <Label fx:id="lblQuantity" />
+                        <TextField
+                            fx:id="quantityField"
+                            promptText="0" />
+                    </VBox>
+
+                    <VBox spacing="4" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                        <Label text="Unidade *" />
+                        <ComboBox fx:id="measurementUnitComboBox"
+                            maxWidth="Infinity"
+                            promptText="Selecione a unidade..." />
+                    </VBox>
+
+
+                </children>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox spacing="10"
+            alignment="CENTER"
+            styleClass="form-footer">
+
+            <padding>
+                <Insets top="16" right="20" bottom="16" left="20" />
+            </padding>
+
+            <Button text="Cancelar"
+                onAction="#onCancel"
+                styleClass="btn-secondary" />
+
+            <Button text="Salvar"
+                onAction="#onSave"
+                styleClass="btn-primary" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

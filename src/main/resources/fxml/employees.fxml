@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.EmployeesController"
+    stylesheets="@../css/card.css"
+    styleClass="content-root">
+
+
+    <!-- HEADER -->
+    <top>
+        <HBox spacing="20"
+            alignment="CENTER_LEFT"
+            styleClass="page-header"
+            BorderPane.alignment="CENTER">
+
+            <padding>
+                <Insets top="0" right="10" bottom="0" left="10" />
+            </padding>
+
+            <!-- LEFT: TITLE + SUBTITLE -->
+            <VBox spacing="4">
+                <Label text="Funcionários"
+                    styleClass="page-title" />
+
+                <Label text="Gerencie seus funcionários"
+                    styleClass="page-subtitle" />
+            </VBox>
+
+            <!-- SPACER -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- RIGHT: BUTTON -->
+            <Button
+                fx:id="btnAddEmployee"
+                text="Registrar Funcionário"
+                onAction="#onAddEmployee"
+                styleClass="btn-primary-red">
+                <graphic>
+                    <StackPane prefWidth="22" prefHeight="22" maxWidth="22" maxHeight="22">
+                        <children>
+                            <ImageView fitHeight="22.0" fitWidth="22.0" preserveRatio="true"
+                                styleClass="btn-primary-icon">
+                                <image>
+                                    <Image url="@/images/ic--baseline-plus.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </graphic>
+            </Button>
+            <Button
+                fx:id="btnAddEmployeePayments"
+                text="Registrar Pagamentos"
+                onAction="#onAddEmployeePayments"
+                styleClass="btn-primary-red">
+                <graphic>
+                    <StackPane prefWidth="22" prefHeight="22" maxWidth="22" maxHeight="22">
+                        <children>
+                            <ImageView fitHeight="22.0" fitWidth="22.0" preserveRatio="true"
+                                styleClass="btn-primary-icon">
+                                <image>
+                                    <Image url="@/images/ic--baseline-plus.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15" />
+            </padding>
+
+            <!-- SEARCH BAR -->
+            <TextField
+                fx:id="txtSearch"
+                promptText="Buscar por nome"
+                styleClass="search-field" />
+
+            <!-- LIST -->
+
+            <TableView
+                fx:id="employeeTable"
+                VBox.vgrow="ALWAYS"
+                styleClass="table-clean">
+
+                <columns>
+                    <TableColumn text="Funcionários" fx:id="colName"
+                        style="-fx-font-size: 16;-fx-alignment: CENTER;" />
+
+                    <TableColumn text="Desligar"
+                        fx:id="colDisconnect"
+                        prefWidth="70"
+                        minWidth="70"
+                        maxWidth="70"
+                        resizable="false"
+                        style="-fx-alignment: CENTER;" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

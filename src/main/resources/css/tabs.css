@@ -1,0 +1,22 @@
+/* Área das abas */
+.tab-pane .tab-header-area {
+    -fx-padding: 0;
+}
+
+/* Região onde ficam as abas */
+.tab-pane .headers-region {
+    -fx-background-color: transparent;
+}
+
+/* Cada aba */
+.tab-pane .tab {
+    -fx-background-insets: 0;
+    -fx-padding: 10 0 10 0;
+}
+
+/* Texto */
+.tab-pane .tab-label {
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+}

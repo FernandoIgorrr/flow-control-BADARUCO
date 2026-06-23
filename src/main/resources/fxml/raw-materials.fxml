@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.RawMaterialsController"
+    stylesheets="@../css/card.css"
+    styleClass="content-root">
+
+
+    <!-- HEADER -->
+    <top>
+        <HBox spacing="20"
+            alignment="CENTER_LEFT"
+            styleClass="page-header"
+            BorderPane.alignment="CENTER">
+
+            <padding>
+                <Insets top="0" right="10" bottom="0" left="10" />
+            </padding>
+
+            <!-- LEFT: TITLE + SUBTITLE -->
+            <VBox spacing="4">
+                <Label text="Matérias-Primas"
+                    styleClass="page-title" />
+
+                <Label text="Gerencie suass matérias-primas"
+                    styleClass="page-subtitle" />
+            </VBox>
+
+            <!-- SPACER -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- RIGHT: BUTTON -->
+            <Button
+                fx:id="btnAddRawMaterial"
+                text="Nova Matéria-Prima"
+                onAction="#onAddRawMaterial"
+                styleClass="btn-primary">
+                <graphic>
+                    <StackPane prefWidth="22" prefHeight="22" maxWidth="22" maxHeight="22">
+                        <children>
+                            <ImageView fitHeight="22.0" fitWidth="22.0" preserveRatio="true"
+                                styleClass="btn-primary-icon">
+                                <image>
+                                    <Image url="@/images/ic--baseline-plus.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15" />
+            </padding>
+
+            <!-- SEARCH BAR -->
+            <TextField
+                fx:id="txtSearch"
+                promptText="Buscar por nome ou descrição"
+                styleClass="search-field" />
+
+            <!-- CARDS -->
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                style="-fx-background-color: transparent;">
+                <content>
+                    <TilePane
+                        fx:id="cardsPane"
+                        prefColumns="3"
+                        vgap="20"
+                        hgap="20"
+                        alignment="TOP_CENTER"
+                        tileAlignment="CENTER">
+
+                        <padding>
+                            <Insets top="0" right="0" bottom="30" left="0" />
+                        </padding>
+                    </TilePane>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

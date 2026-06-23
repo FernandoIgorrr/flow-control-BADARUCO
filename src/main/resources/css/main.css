@@ -1,0 +1,218 @@
+/* =========================
+   ROOT / FUNDO TOTAL
+========================= */
+.root {
+    -fx-font-family: "Inter", "Segoe UI", Arial;
+}
+
+/* FUNDO GLOBAL (DEGRADÊ) */
+.app-background {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%,
+            #F1FDF3 0%,
+            #FFFBEB 45%,
+            #FFFBEB 55%,
+            #F1FDF3 100%);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    -fx-background-color: #f0fdf4;
+    -fx-border-color: #dcfce7;
+    -fx-border-width: 0 1 0 0;
+}
+
+
+.green-degrade-background {
+    -fx-background-color: linear-gradient(to right, #15813D, #16A34A);
+
+    /* Centraliza o logo dentro do StackPane */
+    -fx-alignment: center;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 16;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 15px;
+    -fx-translate-x: 20;
+
+    -fx-pref-width: 260px;
+    -fx-pref-height: 50px;
+}
+
+.sidebar-button2 {
+    /* -fx-background-color: transparent;
+     */
+     -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 16;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 15px;
+    -fx-translate-x: 20;
+
+    -fx-pref-width: 260px;
+    -fx-pref-height: 50px;
+}
+
+/* ÍCONE PADRÃO */
+.sidebar-button .sidebar-icon {
+    -fx-effect: innershadow(gaussian, #000000, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}
+
+
+/* ============================= */
+/* HOVER */
+/* ============================= */
+.sidebar-button:hover {
+    -fx-background-color: #dff5e1;
+    /* verde extremamente claro */
+    -fx-text-fill: #2e7d32;
+    /* verde escuro */
+}
+
+/* ÍCONE NO HOVER */
+.sidebar-button:hover .sidebar-icon {
+    -fx-effect: innershadow(gaussian, #2e7d32, 10, 0.5, 0, 0);
+}
+
+/* ============================= */
+/* SELECIONADO */
+/* ============================= */
+.sidebar-button.selected {
+    -fx-background-color: linear-gradient(to right, #15813D, #16A34A);
+    -fx-text-fill: white;
+}
+
+/* ÍCONE SELECIONADO */
+.sidebar-button.selected .sidebar-icon {
+    -fx-effect: innershadow(gaussian, #f1c40f, 15, 0.7, 0, 0);
+}
+
+
+
+.page-header {
+    -fx-background-color: transparent;
+}
+
+.page-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.page-subtitle {
+    -fx-font-size: 15px;
+    -fx-text-fill: #6b7280;
+}
+
+/*  botão padrão */
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #15813D, #16A34A);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 18;
+    -fx-pref-height: 22px;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 15px;
+}
+
+.btn-primary-red {
+    -fx-background-color: linear-gradient(to right, #DC2626, #EF4444);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 18;
+    -fx-pref-height: 22px;
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 15px;
+}
+
+.btn-primary .btn-primary-icon {
+    -fx-effect: innershadow(gaussian, white, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}
+
+.btn-primary-red .btn-primary-icon {
+    -fx-effect: innershadow(gaussian, white, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+/*========================
+    SEARCH BAR
+==========================*/
+
+.search-field {
+
+    -fx-font-size: 14px;
+
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 4;
+
+    -fx-min-height: 40;
+    -fx-pref-height: 40;
+    -fx-max-height: 40;
+
+    -fx-padding: 0 12;
+}
+
+
+.search-field:focused {
+    -fx-border-color: #2563eb;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(37, 99, 235, 0.15), 6, 0, 0, 0);
+}
+
+
+/* =========================
+    CARDS
+==========================*/
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane>.viewport {
+    -fx-background-color: transparent;
+}
+
+.flow-pane {
+    -fx-background-color: transparent;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.text-main {
+    -fx-text-fill: #111827;
+}
+
+.text-muted {
+    -fx-text-fill: #4b5563;
+}
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.form.edit.VehicleSpentEditFormController"
+    stylesheets="@../../css/form.css"
+    styleClass="form-root">
+
+    <top>
+        <HBox spacing="10"
+            alignment="CENTER_LEFT"
+            styleClass="form-header">
+
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16" />
+            </padding>
+            <VBox spacing="4">
+                <Label
+                    text="Editar Gasto de Veículo"
+                    styleClass="form-title" />
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="14">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50" />
+                    <ColumnConstraints percentWidth="50" />
+                </columnConstraints>
+
+                <children>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="0"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Veículo *" />
+                        <ComboBox fx:id="vehicleComboBox" maxWidth="Infinity" />
+                    </VBox>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="1"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Categoria do Gasto *" />
+                        <ComboBox fx:id="categoryComboBox" maxWidth="Infinity" />
+                    </VBox>
+
+                    <HBox fx:id="quantityFieldContainer"
+                        GridPane.rowIndex="2"
+                        GridPane.columnIndex="0"
+                        maxWidth="Infinity">
+                        <VBox spacing="4" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                            <Label text="Quantidade *" />
+                            <TextField
+                                fx:id="quantityField"
+                                promptText="0,0"
+                                maxWidth="Infinity" />
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="2"
+                        GridPane.columnIndex="1">
+                        <Label text="Valor Pago (R$) *" />
+                        <TextField
+                            fx:id="priceField"
+                            promptText="0,0"
+                            maxWidth="Infinity" />
+                    </VBox>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="3"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Data do Gasto *" />
+                        <DatePicker fx:id="datePicker"
+                            maxWidth="Infinity"/>
+                    </VBox>
+
+                    <VBox spacing="4"
+                        GridPane.rowIndex="4"
+                        GridPane.columnIndex="0"
+                        GridPane.columnSpan="2">
+                        <Label text="Observação" />
+                        <TextField fx:id="noteField" promptText="Observação opcional..." />
+                    </VBox>
+
+                </children>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10"
+            alignment="CENTER"
+            styleClass="form-footer">
+
+            <padding>
+                <Insets top="16" right="20" bottom="16" left="20" />
+            </padding>
+
+            <Button text="Cancelar"
+                onAction="#onCancel"
+                styleClass="btn-secondary" />
+
+            <Button text="Editar"
+                onAction="#onEdit"
+                styleClass="btn-primary" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

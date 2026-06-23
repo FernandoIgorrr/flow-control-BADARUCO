@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.card.RawMaterialCardController"
+    prefWidth="280"
+    prefHeight="80"
+    styleClass="client-card">
+
+
+    <!-- CONTENT -->
+    <VBox spacing="14">
+
+        <padding>
+            <Insets top="16" right="0" bottom="16" left="16" />
+        </padding>
+
+        <!-- HEADER -->
+        <!-- HEADER COM BOTÕES À DIREITA -->
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <!-- ICON CONTAINER -->
+          <!--  <StackPane fx:id="iconContainer"
+                prefWidth="42"
+                prefHeight="42"
+                styleClass="icon-container">
+                <ImageView fx:id="imgType"
+                    fitHeight="22"
+                    fitWidth="22"
+                    preserveRatio="true" />
+            </StackPane>-->
+
+            <!-- NAME + TYPE -->
+            <VBox spacing="2" HBox.hgrow="ALWAYS">
+                <Label fx:id="lblName" styleClass="client-name" />
+                <Label fx:id="lblDescription" styleClass="client-type" />
+            </VBox>
+
+            <!-- ACTION BUTTONS (ALINHADOS À DIREITA) -->
+            <HBox spacing="-15" alignment="CENTER_RIGHT">
+                <Button fx:id="btnEdit" onAction="#onEdit" styleClass="btn-action-edit">
+                    <graphic>
+                        <StackPane prefWidth="28" prefHeight="28">
+                            <ImageView fitHeight="28" fitWidth="28" preserveRatio="true"
+                                styleClass="icon-edit">
+                                <image>
+                                    <Image url="@/images/edit.png" />
+                                </image>
+                            </ImageView>
+                        </StackPane>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="btnDelete" onAction="#onDelete" styleClass="btn-action-delete">
+                    <graphic>
+                        <StackPane prefWidth="28" prefHeight="28">
+                            <ImageView fitHeight="28" fitWidth="28" preserveRatio="true"
+                                styleClass="icon-delete">
+                                <image>
+                                    <Image url="@/images/delete.png" />
+                                </image>
+                            </ImageView>
+                        </StackPane>
+                    </graphic>
+                </Button>
+            </HBox>
+        </HBox>
+    </VBox>
+</StackPane>

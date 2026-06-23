@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.MainController"
+    stylesheets="@/css/main.css"
+    styleClass="app-background">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox
+            fx:id="sidebar"
+            spacing="12"
+            prefWidth="300"
+            styleClass="sidebar">
+
+            <!-- HEADER FIXO -->
+            <StackPane
+                prefHeight="150"
+                minHeight="150"
+                styleClass="green-degrade-background">
+                <children>
+                    <ImageView fx:id="logo" fitHeight="256" fitWidth="256"
+                        preserveRatio="true"
+                        styleClass="sidebar-icon" />
+
+                </children>
+            </StackPane>
+
+            <!-- ÁREA ROLÁVEL -->
+            <ScrollPane
+                fitToWidth="true"
+                hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED"
+                styleClass="sidebar-scroll">
+
+                <content>
+                    <VBox
+                        fx:id="sidebarButtons"
+                        spacing="8"
+                        styleClass="sidebar-content">
+
+                        <Button
+                            fx:id="statementFinanceButton"
+                            text="Balanços"
+                            onAction="#goToStatementFinance"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/uil--chart-bar.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <!--<Button
+                            fx:id="dashboardButton"
+                            text="Dashboard"
+                            onAction="#goToDashboard"
+                            styleClass="sidebar-button">
+
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image
+                                                    url="@/images/material-symbols-lightdashboard-outline-rounded.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>-->
+
+                        <Button
+                            fx:id="productsButton"
+                            text="Seus Produtos"
+                            onAction="#goToProducts"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/solar--box-outline.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+
+                        <!--  <Button
+                            fx:id="rawMaterialsButton"
+                            text="Matérias-primas"
+                            onAction="#goToRawMaterials"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/material-symbolsgrocery.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button> -->
+
+                        <Button
+                            fx:id="clientsButton"
+                            text="Clientes"
+                            onAction="#goToClients"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/radix-icons--people.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="suppliersButton"
+                            text="Fornecedores"
+                            onAction="#goToSuppliers"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/hugeicons--truck-delivery.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="productionsButton"
+                            text="Produções"
+                            onAction="#goToProductions"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/hugeicons--factory.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="salesButton"
+                            text="Vendas"
+                            onAction="#goToSales"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image
+                                                    url="@/images/streamline-cyber--cash-bag-give.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="purchasesButton"
+                            text="Compras de leite"
+                            onAction="#goToPurchases"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/icon-park-outline--milk.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="expensesButton"
+                            text="Gastos"
+                            onAction="#goToExpenses"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image
+                                                    url="@/images/streamline--money-graph-arrow-decrease-down-stats-graph-descend-right-arrow.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+
+                        <Button
+                            fx:id="employeesButton"
+                            text="Funcionários"
+                            onAction="#goToEmployees"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image url="@/images/clarity--employee-line.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="vehiclesButton"
+                            text="Veículos"
+                            onAction="#goToVehicles"
+                            styleClass="sidebar-button">
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                            styleClass="sidebar-icon">
+                                            <image>
+                                                <Image
+                                                    url="@/images/mdi--car-lifted-pickup.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                        <Button
+                            fx:id="btnBackup"
+                            text="Fazer backup dos dados"
+                            onAction="#doBackup"
+                            styleClass="sidebar-button2"
+                        >
+                            <graphic>
+                                <StackPane prefWidth="32" prefHeight="32" maxWidth="32"
+                                    maxHeight="32">
+                                    <children>
+                                        <ImageView fitHeight="32.0" fitWidth="32.0"
+                                            preserveRatio="true"
+                                        >
+                                            <image>
+                                                <Image url="@/images/carbon--data-backup.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                            </graphic>
+                        </Button>
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </left>
+
+
+    <!-- CONTEÚDO -->
+    <center>
+        <StackPane fx:id="conteudoPrincipal"
+            styleClass="content-area"
+            style="-fx-padding: 20;" />
+    </center>
+
+</BorderPane>

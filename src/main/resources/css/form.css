@@ -1,0 +1,185 @@
+/* =========================
+   ROOT
+========================= */
+
+.form-root {
+    -fx-background-color: #f7f9fc;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+
+
+/* =========================
+   HEADER
+========================= */
+
+.form-header {
+    -fx-background-color: transparent;
+}
+
+.label.form-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.form-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+.label {
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+}
+
+.Text {
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #374151;
+}
+
+/* =========================
+   INPUTS (TextField / ComboBox)
+========================= */
+
+.text-field,
+.combo-box {
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 4px;
+
+    -fx-padding: 0 4px;
+}
+
+.text-field:focused,
+.combo-box:focused {
+    -fx-border-color: #2563eb;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.15), 6, 0, 0, 0);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.form-footer {
+    -fx-background-color: transparent;
+}
+
+/* =========================
+   BUTTONS (Base)
+========================= */
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 42px;
+    -fx-min-width: 120px;
+
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.btn-secondary {
+    -fx-background-color: white;
+    -fx-text-fill: #374151;
+
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #f3f4f6;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #e5e7eb;
+}
+
+/* =========================
+   SAVE BUTTON (GREEN GRADIENT)
+========================= */
+
+.btn-primary {
+    -fx-text-fill: white;
+
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #22c55e,
+        #16a34a
+    );
+}
+
+.btn-add-fields {
+    -fx-text-fill: white;
+
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #22c55e,
+        #16a34a
+    );
+}
+
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(
+        to bottom right,
+        #16a34a,
+        #15803d
+    );
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #15803d;
+}
+
+
+/* ACTION BUTTONS */
+.btn-action-edit,
+.btn-action-delete,
+.btn-action-add-purchase {
+   -fx-background-color: transparent;
+
+    -fx-min-width: 32;
+    -fx-max-width: 32;
+    -fx-pref-width: 32;
+    
+    -fx-min-height: 32;
+    -fx-max-height: 32;
+    -fx-pref-height: 32;
+
+    -fx-padding: 0; /* Remove o espaço interno padrão que estica o botão */
+    -fx-cursor: hand;
+
+}
+
+
+.icon-edit {
+    -fx-effect: innershadow(gaussian, #16A34A, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}
+
+.icon-delete {
+    -fx-effect: innershadow(gaussian, #DC2626, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}
+
+.icon-add-purchase {
+    -fx-effect: innershadow(gaussian, #2563eb, 10, 0.5, 0, 0);
+    -fx-opacity: 1;
+}

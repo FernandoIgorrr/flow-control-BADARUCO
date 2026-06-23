@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.ExpensesController"
+    stylesheets="@../css/card.css"
+    styleClass="content-root">
+
+    <!-- HEADER -->
+    <top>
+        <VBox>
+            <HBox spacing="20"
+                alignment="CENTER_LEFT"
+                styleClass="page-header"
+                BorderPane.alignment="CENTER">
+
+                <padding>
+                    <Insets top="0" right="10" bottom="0" left="10" />
+                </padding>
+
+                <!-- LEFT: TITLE + SUBTITLE -->
+                <VBox spacing="4">
+                    <Label text="Gastos e Despesas"
+                        styleClass="page-title" />
+
+                    <Label text="Controle todas as despesas da fábrica"
+                        styleClass="page-subtitle" />
+                </VBox>
+
+                <!-- SPACER -->
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- RIGHT: BUTTON -->
+
+                <Button
+                    fx:id="btnAddSpent"
+                    text="Registrar despesa"
+                    onAction="#onAddSpent"
+                    styleClass="btn-primary-red">
+                    <graphic>
+                        <StackPane prefWidth="22" prefHeight="22" maxWidth="22" maxHeight="22">
+                            <children>
+                                <ImageView fitHeight="22.0" fitWidth="22.0" preserveRatio="true"
+                                    styleClass="btn-primary-icon">
+                                    <image>
+                                        <Image url="@/images/ic--baseline-plus.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </StackPane>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <!-- PRICE CARDS -->
+            <HBox spacing="16">
+
+                <VBox spacing="12" styleClass="card-generic" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="24" bottom="12" left="24" right="24" />
+                    </padding>
+                    <HBox spacing="12">
+                        <Label text="Total em contas" styleClass="client-name" />
+                        <ComboBox fx:id="timeIntervalEnumComboBoxFilter" />
+                    </HBox>
+                    <HBox spacing="12">
+                        <StackPane fx:id="iconContainer"
+                            prefWidth="28"
+                            prefHeight="28"
+                            styleClass="icon-container-on-card">
+                            <ImageView fx:id="imgType"
+                                fitHeight="28"
+                                fitWidth="28"
+                                preserveRatio="true" />
+                        </StackPane>
+                        <Label fx:id="lblTotalExpenses" styleClass="total-price-info-black" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblTotalExpensesSpend" styleClass="total-price-info-blue" />
+                    </HBox>
+
+                </VBox>
+
+                <HBox spacing="12" styleClass="card-generic" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="24" bottom="12" left="24" right="24" />
+                    </padding>
+                    <Label text="Categoria" styleClass="client-name" />
+                    <ComboBox fx:id="spentCategoryComboBoxFilter" maxWidth="200" />
+                </HBox>
+
+                <HBox fx:id="employeeFilterContainer" spacing="12" styleClass="card-generic"
+                    HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="24" bottom="12" left="24" right="24" />
+                    </padding>
+                    <Label text="Funcionário" styleClass="client-name" />
+                    <ComboBox fx:id="employeeComboBoxFilter" maxWidth="200" />
+                </HBox>
+
+                <HBox fx:id="vehicleFilterContainer" spacing="12" styleClass="card-generic"
+                    HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="24" bottom="12" left="24" right="24" />
+                    </padding>
+                    <Label text="Veículo" styleClass="client-name" />
+                    <ComboBox fx:id="vehicleComboBoxFilter" maxWidth="200" />
+                </HBox>
+
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CONTENT -->
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="15" right="0" bottom="0" left="0" />
+            </padding>
+
+            <!-- CARDS -->
+            <ScrollPane
+                fitToWidth="true"
+                hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent;">
+
+                <content>
+                    <VBox
+                        fx:id="cardsPane"
+                        spacing="20"
+                        fillWidth="true"
+                        maxWidth="Infinity">
+
+                        <padding>
+                            <Insets top="0" right="0" bottom="30" left="0" />
+                        </padding>
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

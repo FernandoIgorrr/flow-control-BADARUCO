@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.form.SaleFormController"
+    stylesheets="@../../css/form.css"
+    styleClass="form-root">
+
+    <!-- HEADER -->
+    <top>
+        <HBox spacing="10"
+            alignment="CENTER_LEFT"
+            styleClass="form-header">
+
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16" />
+            </padding>
+            <VBox spacing="4">
+                <Label
+                    text="Nova Venda"
+                    styleClass="form-title" />
+            </VBox>
+        </HBox>
+    </top>
+
+    <!-- FORM -->
+    <center>
+        <ScrollPane
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            styleClass="form-scroll">
+
+            <content>
+                <VBox spacing="14">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20" />
+                    </padding>
+
+                    <GridPane hgap="12" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50" />
+                            <ColumnConstraints percentWidth="50" />
+                        </columnConstraints>
+
+                        <children>
+                            <VBox fx:id="productFieldsBox" spacing="8"
+                                GridPane.rowIndex="0"
+                                GridPane.columnIndex="0"
+                                GridPane.columnSpan="2">
+                                <!-- O primeiro TextField será criado pelo controller -->
+                            </VBox>
+                            <VBox spacing="8"
+                                GridPane.rowIndex="1"
+                                GridPane.columnIndex="0"
+                                GridPane.columnSpan="2">
+                                <Button text="Adicionar Produto"
+                                    onAction="#addProductFields"
+                                    styleClass="btn-add-fields" 
+                                    maxWidth="Infinity" />
+                            </VBox>
+
+                            <VBox spacing="4"
+                                GridPane.rowIndex="2"
+                                GridPane.columnIndex="0"
+                                GridPane.columnSpan="2">
+                                <Label text="Selecione o cliente *" />
+                                <TextField fx:id="clientField"
+                                    maxWidth="Infinity" />
+                            </VBox>
+
+                            <VBox spacing="4"
+                                GridPane.rowIndex="3"
+                                GridPane.columnIndex="0"
+                                GridPane.columnSpan="2">
+                                <Label text="Data da venda *" />
+                                <DatePicker fx:id="datePicker"
+                                    maxWidth="Infinity" />
+                            </VBox>
+                        </children>
+                    </GridPane>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox spacing="10"
+            alignment="CENTER"
+            styleClass="form-footer">
+
+            <padding>
+                <Insets top="16" right="20" bottom="16" left="20" />
+            </padding>
+
+            <Button text="Cancelar"
+                onAction="#onCancel"
+                styleClass="btn-secondary" />
+
+            <Button text="Salvar"
+                onAction="#onSave"
+                styleClass="btn-primary" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
