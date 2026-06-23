@@ -8,7 +8,7 @@
 
 <VBox spacing="0.0" prefHeight="800.0" prefWidth="1100.0"
     xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.StatementFinanceController"
+    fx:controller="br.com.midnightsyslabs.flow_control_badaruco.ui.controller.StatementFinanceController"
     stylesheets="@../css/card.css"
 >
 

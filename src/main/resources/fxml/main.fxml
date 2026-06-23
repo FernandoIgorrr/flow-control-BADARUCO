@@ -7,7 +7,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
     xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.MainController"
+    fx:controller="br.com.midnightsyslabs.flow_control_badaruco.ui.controller.MainController"
     stylesheets="@/css/main.css"
     styleClass="app-background">
 
@@ -25,7 +25,7 @@
                 minHeight="150"
                 styleClass="green-degrade-background">
                 <children>
-                    <ImageView fx:id="logo" fitHeight="256" fitWidth="256"
+                    <ImageView fx:id="logo" fitHeight="144" fitWidth="144"
                         preserveRatio="true"
                         styleClass="sidebar-icon" />
 

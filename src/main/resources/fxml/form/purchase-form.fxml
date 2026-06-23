@@ -7,7 +7,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
     xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="br.com.midnightsyslabs.flow_control.ui.controller.form.PurchaseFormController"
+    fx:controller="br.com.midnightsyslabs.flow_control_badaruco.ui.controller.form.PurchaseFormController"
     stylesheets="@../../css/form.css"
     styleClass="form-root">
 
